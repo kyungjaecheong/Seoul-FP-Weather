@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Seoul FP-Weather</title>
+    <meta name="description" content="기상 정보 기반 서울시 월별 식중독 환자 수 예측 프로젝트">
+    <meta name="keywords" content="seoul, weather, food poisoning">
+    <meta name="author" content="KyungJae Cheong">
+    <meta property="og:title" content="Seoul FP-Weather">
+    <meta property="og:description" content="기상 정보 기반 서울시 월별 식중독 환자 수 예측 프로젝트">
+    <meta property="og:image" content="{{ url_for('static', filename='img/og-icon.png') }}">
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <script src="../static/js/ie-emulation-modes-warning.js"></script>
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">
+                            <a href="/">
+                                <img src="../static/img/icon.png" alt="FP-Weather">
+                                Seoul FP-Weather
+                            </a>
+                        </h3>
+                        <nav>
+                            <br>
+                            <ul class="nav masthead-nav">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#dashboard">대시보드</a></li>
+                                <li><a href="#prediction">AI 예측</a></li>
+                                <li><a href="#contact">Info & Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <div class="cover-title">
+                        <h2>Seoul<br>FP-Weather</h2>
+                    </div>
+                    <h1 class="cover-heading">
+                        <div class="heading-grid">
+                            <div class="grid-contents">
+                                <div class="contents-detail">
+                                    <p><img src="../static/img/icon.png" alt="FP-Weather"> Seoul<br>Food Poisoning<br>Prediction<br>Program</p>
+                                </div>
+                            </div>
+                            <div class="grid-contents">
+                                <div class="contents-detail">
+                                    <p><img src="../static/img/icon.png" alt="FP-Weather"><br>서울시<br>식중독 AI 예측<br>프로그램</p>
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+                    <br>
+                    <p class="lead"><br>서울시 월별 기상정보를 기반으로<br>월별 식중독 환자수를<br>인공지능으로 예측하는 프로그램<br><br></p>
+                    <br>
+                    <div class="home-grid">
+                        <div class="grid-contents">
+                            <div class="contents-detail">
+                                <a href="/#dashboard">대시보드<br>바로가기</a>
+                                <br>
+                                <a href="/#dashboard" class="btn btn-lg btn-default" style="width: 140px; height: 50px;">Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="grid-contents">
+                            <div class="contents-detail">
+                                <a href="/#prediction">AI 예측<br>바로가기</a>
+                                <br>
+                                <a href="/#prediction" class="btn btn-lg btn-default" style="width: 140px; height: 50px;">Prediction</a>
+                            </div>
+                        </div>
+                        <div class="grid-contents">
+                            <div class="contents-detail">
+                                <a href="/#contact">프로그램 &<br>개발자 정보</a>
+                                <br>
+                                <a href="/#contact" class="btn btn-lg btn-default" style="width: 140px; height: 50px;">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inner cover" id="dashboard">
+                    <div class="cover-title">
+                        <h2>Dashboard<br>대시보드</h2>
+                    </div>
+                    <h1 class="cover-heading">
+                        <p>서울시 식중독 발생 정보와<br>기상요인에 따른 트렌드를<br>확인하실 수 있습니다</p>
+                        <br><br>
+                        <p>서울시 식중독 데이터 대시보드<br>( 2002년 ~ 2021년 )</p>
+                        <br>
+                        <div class="heading-grid">
+                            <div class="grid-contents">
+                                <div class="contents-detail" style="background-color: transparent;">
+                                    <p style="background-color: #666;">연별,월별 환자수</p>
+                                    <br>                                    
+                                    <p>Looker Studio</p>
+                                    <a href="https://datastudio.google.com/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                                        <img src="https://ssl.gstatic.com/datastudio/latest/static_images/pngs/favicon_looker_studio.png" style="width: 16px; height: 16px;"> Looker Studio
+                                    </a>                                    
+                                </div>
+                            </div>
+                            <div class="grid-contents">
+                                <div class="contents-detail" style="background-color: transparent;">
+                                    <p style="background-color: #666;">계절별,기후별 환자수</p>
+                                    <br>
+                                    <p>Tableau</p>
+                                    <a href="https://public.tableau.com/app/profile/kyungjae.cheong/viz/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                                        <img src="https://public.tableau.com/app/favicon.ico" style="width: 16px; height: 16px;"> Tableau
+                                    </a>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </h1>
+                    <br><br>
+                    <h1 class="cover-heading">
+                        <p>Google Looker Studio<br>연도별, 월별 환자 수 대시보드</p>
+                        <a href="https://datastudio.google.com/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                            <img src="https://ssl.gstatic.com/datastudio/latest/static_images/pngs/favicon_looker_studio.png" style="width: 16px; height: 16px;"> Looker Studio
+                        </a>
+                    </h1>
+                    <br>
+                    <div class="dash-container">
+                        <iframe src="https://datastudio.google.com/embed/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66/page/90R6C" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                    <h1 class="cover-heading">
+                        <p>Tableau<br>계절별, 기상요인별 환자 수 대시보드</p>
+                        <a href="https://public.tableau.com/app/profile/kyungjae.cheong/viz/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                            <img src="https://public.tableau.com/app/favicon.ico" style="width: 16px; height: 16px;"> Tableau
+                        </a>
+                    </h1>
+                    <br>
+                    <div class="dash-container">
+                        <iframe src="https://public.tableau.com/views/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard?:embed=yes&:showVizHome=no"></iframe>
+                    </div>
+                </div>
+
+                <div class="inner cover" id="prediction">
+                    <div class="cover-title">
+                        <h2>Prediction<br>AI 예측</h2>
+                    </div>                    
+                    <h1 class="cover-heading">
+                        <p id="predict-req">서울시 월별 기상 정보로<br>월별 식중독 환자 수를 예측합니다</p>
+                        <a href="#month-weather" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">월간 기상 정보 링크</a>
+                        <br>
+                    </h1>
+                    <div class="cover-req" style="background-color: #444;">
+                        <br>
+                        <h1 class="cover-heading">
+                            <p>기상 정보를 입력해주세요<br>(숫자만 입력해주세요)</p>                        
+                        </h1>                    
+                        <div class="content-grid">
+                            <div class="heading-grid">
+                                <div class="grid-contents">
+                                    <div class="work-request--info">
+                                        <form action="/#predict-req" method="post">
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 평균 기온 (℃)</label>
+                                                <input type="text" name="avgTa" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 최고 기온 (℃)</label>
+                                                <input type="text" name="maxTa" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 최저 기온 (℃)</label>
+                                                <input type="text" name="minTa" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 합 강수량 (mm)</label>
+                                                <input type="text" name="sumRn" required>
+                                            </div>                                    
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 평균 풍속 (m/s)</label>
+                                                <input type="text" name="avgWs" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 평균 상대습도 (%)</label>
+                                                <input type="text" name="avgRhm" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 합 일조시간 (hr)</label>
+                                                <input type="text" name="sumSsHr" required>
+                                            </div>
+                                            <div class="info-name" style="width: 150px; margin-bottom: 20px;">
+                                                <label for="formGroupExampleInput">월 평균 해면기압 (hpa)</label>
+                                                <input type="text" name="avgPs" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-lg btn-default">
+                                                <img src="../static/img/icon.png" alt="FP-Weather"> Predict !
+                                            </button>
+                                        </form>
+                                    </div>                                
+                                </div>
+                                <div class="grid-contents">
+                                    <div class="predict-result">
+                                        {% if pred %}
+                                        <br><br>
+                                        <img src="../static/img/icon-96.png">
+                                        <h2>서울시<br></h2>
+                                        <h3>월별 식중독<br><br>환자 수<br><br>예측 결과<br></h3>
+                                        <h2>{{ pred }} 명</h2>
+                                        <br>
+                                        <img src="../static/img/icon-96.png">
+                                        <br>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="month-nav" id="month-weather">
+                    <br><br><br><br><br>
+                    </div>
+                    <div class="cover-title">
+                        <br><br>
+                        <h2>월간 기상 정보</h2>
+                    </div>
+                    <h1 class="cover-heading">
+                        <p>월간 기상 정보 사이트 링크</p>
+                        <br>
+                        <div class="heading-grid">
+                            <div class="grid-contents">
+                                <div class="contents-detail" style="background-color: transparent;">
+                                    <p style="background-color: #666;">월간 기상 자료</p>
+                                    <br>                                    
+                                    <p>기상청 종관<br>기상 관측</p>
+                                    <a href="https://data.kma.go.kr/data/grnd/selectAsosRltmList.do?pgmNo=36" target="_blank" class="btn btn-lg btn-default" style="width: 190px; height: 50px;">
+                                        <img src="https://data.kma.go.kr/resources/images/favicon.png" style="width: 16px; height: 16px;"> 기상자료개방포털
+                                    </a>
+                                    <br><br>
+                                    <p>서울시 기상<br>개황 통계</p>
+                                    <a href="https://data.seoul.go.kr/dataList/414/S/2/datasetView.do" target="_blank" class="btn btn-lg btn-default" style="width: 190px; height: 50px;">
+                                        <img src="https://data.seoul.go.kr/images/favicon.ico" style="width: 16px; height: 16px;"> 열린 데이터 광장
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid-contents">
+                                <div class="contents-detail" style="background-color: transparent;">
+                                    <p style="background-color: #666;">기후 평년 값</p>
+                                    <br>
+                                    <p>기상청 기후<br>평년 값</p>
+                                    <a href="https://data.kma.go.kr/climate/average30Years/selectAverage30YearsKoreaList.do?pgmNo=188" target="_blank" class="btn btn-lg btn-default" style="width: 190px; height: 50px;">
+                                        <img src="https://data.kma.go.kr/resources/images/favicon.png" style="width: 16px; height: 16px;"> 기상자료개방포털
+                                    </a>
+                                    <br><br>
+                                    <p>기상청 기후<br>평년 값</p>
+                                    <a href="https://data.kma.go.kr/normals/table.do" target="_blank" class="btn btn-lg btn-default" style="width: 190px; height: 50px;">
+                                        <img src="https://data.kma.go.kr/resources/images/favicon.png" style="width: 16px; height: 16px;"> 기상청기후평년값
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <p>AI 예측으로 돌아가기</p>
+                        <a href="#predict-req" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                            <img src="../static/img/icon.png" alt="FP-Weather"> AI Prediction
+                        </a>
+                        <br><br><br><br><br>
+                    </h1>
+                </div>                
+
+                <div class="inner cover" id="contact">
+                    <div class="cover-title">
+                        <h2>Information<br>프로그램 정보</h2>
+                    </div>
+                    <h1 class="cover-heading">
+                        <p>Codestates Project</p>       
+                    </h1>
+                    <p class="lead">본 웹사이트는<br>Codestates AI Bootcamp Section3<br>개인 Project를 수행하기 위해<br>제작 및 배포 되었습니다</p>
+                    <br>                    
+                    <h1 class="cover-heading">
+                        <p>Github Repository Link</p>       
+                    </h1>
+                    <p class="lead">본 프로그램의 Source Code는<br>Github 레포지토리 링크를 통해<br>확인 하실 수 있습니다</p>
+                        <a href="https://github.com/kyungjaecheong/Seoul-FP-Weather" target="_blank" class="btn btn-lg btn-default" style="width: 300px; height: 50px;">
+                            <img src="https://github.githubassets.com/favicons/favicon.svg" style="width: 32px; height: 32px;"> Github Repository
+                        </a>
+                    <br><br><br>
+                    <h1 class="cover-heading">
+                        <p>Data Source</p>       
+                    </h1>
+                    <p class="lead">본 프로그램의 데이터는<br>기상청, 식품안전의약처, 서울시에서<br>공개한 openAPI 및 공공데이터를<br>수집 및 취합하여 구축 되었습니다</p>
+                        <a href="https://data.kma.go.kr/cmmn/main.do" target="_blank" class="btn btn-lg btn-default" style="width: 300px; height: 50px;">
+                            <img src="https://data.kma.go.kr/resources/images/favicon.png" style="width: 32px; height: 32px;"> 기상청 기상자료개방포털
+                        </a>
+                        <br><br>
+                        <a href="https://www.foodsafetykorea.go.kr/apiMain.do" target="_blank" class="btn btn-lg btn-default" style="width: 300px; height: 50px;">
+                            <img src="https://www.foodsafetykorea.go.kr/images/common/favicon.ico" style="width: 32px; height: 32px;"> 식품안전의약처 공공데이터
+                        </a>
+                        <br><br>
+                        <a href="https://data.seoul.go.kr/" target="_blank" class="btn btn-lg btn-default" style="width: 300px; height: 50px;">
+                            <img src="https://data.seoul.go.kr/images/favicon.ico" style="width: 32px; height: 32px;"> 서울시 열린데이터 광장
+                        </a>
+                    <br><br><br>
+                    <div class="cover-title">
+                        <h2>Contact<br>개발자 정보</h2>
+                    </div>
+                    <h1 class="cover-heading">
+                        <p>
+                            <img src="https://icons.iconarchive.com/icons/wikipedia/flags/32/KR-South-Korea-Flag-icon.png">
+                            KyungJae Cheong
+                        </p>
+                        <p>
+                            <img src="https://icons.iconarchive.com/icons/icons-land/vista-flags/32/United-States-Flag-1-icon.png">
+                            Daniel Cheong
+                        </p>
+                    </h1><br>
+                    <a href="https://github.com/kyungjaecheong" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                        <img src="https://github.githubassets.com/favicons/favicon.svg" style="width: 32px; height: 32px;"> GITHUB
+                    </a>
+                    <br><br><br>
+                    <a href="https://velog.io/@dankj1991" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                        <img src="https://static.velog.io/favicons/favicon-32x32.png" style="width: 32px; height: 32px;"> BLOG
+                    </a>
+                    <br><br><br>
+                    <a href="mailto:dankool@naver.com" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                        <img src="https://www.naver.com/favicon.ico?1" style="width: 32px; height: 32px;"> NAVER MAIL
+                    </a>
+                    <br>dankool@naver.com<br><br>
+                    <a href="mailto:dankj1991@gmail.com" target="_blank" class="btn btn-lg btn-default" style="width: 200px; height: 50px;">
+                        <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" style="width: 32px; height: 32px;"> G-MAIL
+                    </a>
+                    <br>dankj1991@gmail.com<br><br>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Seoul Food-Poisoning Prediction Project by <a href="https://github.com/kyungjaecheong">KyungJae Cheong</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
