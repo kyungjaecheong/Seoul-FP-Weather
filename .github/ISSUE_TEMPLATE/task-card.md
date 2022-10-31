@@ -3,15 +3,15 @@ name: Task Card
 about: Task 생성시 사용되는 template
 title: "[Task] 작업 내용을 작성해 주세요"
 labels: ''
-assignees: ''
+assignees: kyungjaecheong
 
 ---
 
 ## Task Card
 
-**Assignee** : (Name)
+**Assignee** : kyungjaecheong
 
-#### Job description
-> 작업 내용
+#### Job Description
+> 작업 내용을 적어주세요
 
-(here)
+(여기)
