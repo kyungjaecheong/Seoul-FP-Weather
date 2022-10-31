@@ -37,8 +37,37 @@ def main():
     # 테이블 초기화
     cur.execute("""DROP TABLE IF EXISTS fp_seoul;""")
     cur.execute("""DROP TABLE IF EXISTS weather;""")
+    cur.execute("""DROP TABLE IF EXISTS w_avg_month;""")
+    cur.execute("""DROP TABLE IF EXISTS w_avg_season;""")
+    print('4 table dropped')
     
     # 테이블 생성
+    sql_create_table_asv = """CREATE TABLE IF NOT EXISTS w_avg_season (
+        season VARCHAR(8) NOT NULL,
+        avgTa FLOAT,
+        maxTa FLOAT,
+        minTa FLOAT,
+        sumRn FLOAT,
+        avgWs FLOAT,
+        avgRhm FLOAT,
+        sumSsHr FLOAT,
+        avgPs FLOAT,
+        CONSTRAINT w_avg_season_PK PRIMARY KEY (season)
+        );"""
+    sql_create_table_ayv = """CREATE TABLE IF NOT EXISTS w_avg_month (
+        month VARCHAR(2) NOT NULL,
+        season VARCHAR(8) NOT NULL,
+        avgTa FLOAT,
+        maxTa FLOAT,
+        minTa FLOAT,
+        sumRn FLOAT,
+        avgWs FLOAT,
+        avgRhm FLOAT,
+        sumSsHr FLOAT,
+        avgPs FLOAT,
+        CONSTRAINT w_avg_month_PK PRIMARY KEY (month),
+        CONSTRAINT w_avg_month_FK FOREIGN KEY (season) REFERENCES w_avg_season (season)
+        );"""
     sql_create_table_w = """CREATE TABLE IF NOT EXISTS weather (
         month_id DATE NOT NULL,
         year VARCHAR(4) NOT NULL,
@@ -51,7 +80,8 @@ def main():
         avgRhm FLOAT,
         sumSsHr FLOAT,
         avgPs FLOAT,
-        CONSTRAINT weather_PK PRIMARY KEY (month_id)
+        CONSTRAINT weather_PK PRIMARY KEY (month_id),
+        CONSTRAINT weather_FK FOREIGN KEY (month) REFERENCES w_avg_month (month)        
         );"""
     sql_create_table_fp = """CREATE TABLE IF NOT EXISTS fp_seoul (
         month_id DATE NOT NULL,
@@ -60,10 +90,14 @@ def main():
         CONSTRAINT fp_seoul_FK FOREIGN KEY (month_id) REFERENCES weather (month_id)
         );"""
     
+    
+    
+    cur.execute(sql_create_table_asv)
+    cur.execute(sql_create_table_ayv)
     cur.execute(sql_create_table_w)
     cur.execute(sql_create_table_fp)
     
-    print('table "weather" & "fp_seoul" created')
+    print('4 table created')
     
     # csv file로부터 데이터 추출
     with open('./data/csv/seoul-weather-month.csv','r') as cf:
@@ -85,12 +119,34 @@ def main():
             p_c = row["PATNT_CNT"]
             data_fp.append([y_m,p_c])
     
-    # 테이블에 데이터 삽입
+    # 월별평년값 데이터 추출
+    with open('./data/csv/seoul-average-month.csv','r') as cf:
+        csv_reader = csv.reader(cf)
+        next(csv_reader)
+        data_ayv = list(csv_reader)
+    # 계절평균값 데이터 추출
+    with open('./data/csv/seoul-average-season.csv','r') as cf:
+        csv_reader = csv.reader(cf)
+        next(csv_reader)
+        data_asv = list(csv_reader)
+    
+    #평년값 데이터 삽입 명령어
+    sql_insert_asv = """INSERT INTO w_avg_season 
+        (season, avgTa, maxTa, minTa, sumRn, avgWs, avgRhm, sumSsHr, avgPs)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"""
+    sql_insert_ayv = """INSERT INTO w_avg_month 
+        (month, season, avgTa, maxTa, minTa, sumRn, avgWs, avgRhm, sumSsHr, avgPs)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
+    
+    # 테이블에 데이터 삽입 명령어
     sql_insert_w = """INSERT INTO weather 
         (month_id, year, month, avgTa, maxTa, minTa, sumRn, avgWs, avgRhm, sumSsHr, avgPs)
         VALUES (TO_DATE(%s,'YYYY.MM'), %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
     sql_insert_fp = """INSERT INTO fp_seoul(month_id, patient_count) VALUES (TO_DATE(%s,'YYYY.MM'), %s);"""
     
+    
+    cur.executemany(sql_insert_asv, data_asv)
+    cur.executemany(sql_insert_ayv, data_ayv)
     cur.executemany(sql_insert_w, data_w)
     cur.executemany(sql_insert_fp, data_fp)
            
