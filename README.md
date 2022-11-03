@@ -4,6 +4,8 @@ App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 
 ![image](https://user-images.githubusercontent.com/109939415/199650581-d2ed1480-7577-412a-b321-7cd36b9d42f9.png)
 
+<div align=center>
+
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a>
 <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white"></a>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"></a>
@@ -26,7 +28,10 @@ App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 <img src="https://img.shields.io/badge/Looker-4285F4?style=for-the-badge&logo=Looker&logoColor=white"></a>
 <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white"></a>
 
+</div>
+
 # Seoul Food-Poisoning Prediction Program
+
 - 서울시 월간 기상정보를 기반으로 서울시 월간 식중독 발생 환자 수를 예측하는 AI 머신 러닝 프로그램
 
 App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
