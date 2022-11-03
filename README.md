@@ -29,6 +29,8 @@ App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 # Seoul Food-Poisoning Prediction Program
 - 서울시 월간 기상정보를 기반으로 서울시 월간 식중독 발생 환자 수를 예측하는 AI 머신 러닝 프로그램
 
+App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
+
 # Project ppt Outline 프로젝트 발표 개요
 
 ![image](https://user-images.githubusercontent.com/109939415/199651758-4992cfbd-70a3-4dfc-8b02-9008eafde3d5.png)
@@ -60,6 +62,8 @@ App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 ![image](https://user-images.githubusercontent.com/109939415/199652168-2c81e0b7-fc98-4725-b794-b13b5e76369f.png)
 
 # Web Page 웹페이지 미리보기
+
+App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 
 ![image](https://user-images.githubusercontent.com/109939415/199652250-e1bdf2d2-a804-4c7b-a905-8a0658d696e8.png)
 
