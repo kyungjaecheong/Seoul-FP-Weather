@@ -1,6 +1,6 @@
 # Seoul-FP-Weather
 
-App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
+App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/){: target="_blank"}
 
 ![image](https://user-images.githubusercontent.com/109939415/199650581-d2ed1480-7577-412a-b321-7cd36b9d42f9.png)
 
@@ -44,15 +44,15 @@ App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 # Dashboards 대시보드
 - 연도별, 월별 식중독 트렌드
 
-[Looker Studio](https://datastudio.google.com/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66)
+[Looker Studio](https://datastudio.google.com/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66){: target="_blank"}
 
 - 계절별, 기상요인별 식중독 트렌드
 
-[Tableau](https://public.tableau.com/app/profile/kyungjae.cheong/viz/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard)
+[Tableau](https://public.tableau.com/app/profile/kyungjae.cheong/viz/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard){: target="_blank"}
 
 - 기후평년값 예측환자 수 대시보드
 
-[Looker Studio](https://datastudio.google.com/embed/reporting/3be2acf3-56b0-4f85-8b20-080dfaee4711)
+[Looker Studio](https://datastudio.google.com/embed/reporting/3be2acf3-56b0-4f85-8b20-080dfaee4711){: target="_blank"}
 
 
 # Takeaway 핵심, 느낀점
