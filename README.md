@@ -41,6 +41,17 @@ App link = https://fpweather.herokuapp.com/
 
 ![image](https://user-images.githubusercontent.com/109939415/199652038-6b748ec5-b76e-44d4-b011-14dd4f11035a.png)
 
+# Dashboards 대시보드
+- 연도별, 월별 식중독 트렌드<a href="https://datastudio.google.com/reporting/f6ec1b22-4f1a-4e8b-90f5-2c06a199fd66" target="_blank" style="width: 200px; height: 50px;">
+<img src="https://ssl.gstatic.com/datastudio/latest/static_images/pngs/favicon_looker_studio.png" style="width: 16px; height: 16px;"> Looker Studio </a>
+
+- 계절별, 기상요인별 식중독 트렌드<a href="https://public.tableau.com/app/profile/kyungjae.cheong/viz/SeoulFP-WeatherDashboard/SeoulFP-WeatherDashboard" target="_blank" style="width: 200px; height: 50px;">
+<img src="https://public.tableau.com/app/favicon.ico" style="width: 16px; height: 16px;"> Tableau </a>
+
+- 기후평년값 예측환자 수 대시보드<a href="https://datastudio.google.com/embed/reporting/3be2acf3-56b0-4f85-8b20-080dfaee4711" target="_blank" style="width: 200px; height: 50px;">
+<img src="https://ssl.gstatic.com/datastudio/latest/static_images/pngs/favicon_looker_studio.png" style="width: 16px; height: 16px;"> Looker Studio </a>
+
+
 # Takeaway 핵심, 느낀점
 
 ![image](https://user-images.githubusercontent.com/109939415/199652168-2c81e0b7-fc98-4725-b794-b13b5e76369f.png)
