@@ -2,6 +2,11 @@
 
 App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 
+블로그 포스팅 바로가기
+- [[Project] Seoul FP-Weather - (1) Introduction & Database](https://velog.io/@dankj1991/Project-Seoul-FP-Weather-%EB%82%A0%EC%94%A8-%EA%B8%B0%EB%B0%98-%EC%84%9C%EC%9A%B8-%EC%8B%9D%EC%A4%91%EB%8F%85-%ED%99%98%EC%9E%90-%EC%88%98-%EC%98%88%EC%B8%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-1-Introduction-Database)
+- [[Project] Seoul FP-Weather - (2) Regression Model (LightGBM)](https://velog.io/@dankj1991/Project-Seoul-FP-Weather-%EB%82%A0%EC%94%A8-%EA%B8%B0%EB%B0%98-%EC%84%9C%EC%9A%B8-%EC%8B%9D%EC%A4%91%EB%8F%85-%ED%99%98%EC%9E%90-%EC%88%98-%EC%98%88%EC%B8%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-2-Modeling-LightGBM)
+- [[Project] Seoul FP-Weather - (3) Deployment & Conclusion](https://velog.io/@dankj1991/Project-Seoul-FP-Weather-%EB%82%A0%EC%94%A8-%EA%B8%B0%EB%B0%98-%EC%84%9C%EC%9A%B8-%EC%8B%9D%EC%A4%91%EB%8F%85-%ED%99%98%EC%9E%90-%EC%88%98-%EC%98%88%EC%B8%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-3-%EB%B0%B0%ED%8F%AC-%EB%B0%8F-%EA%B2%B0)
+
 ![image](https://user-images.githubusercontent.com/109939415/199650581-d2ed1480-7577-412a-b321-7cd36b9d42f9.png)
 
 <div align=center>
