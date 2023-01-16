@@ -2,7 +2,8 @@
 
 App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
 
-- 현재 Application Error 발생하여 접속 되지 않는 상태 (2022년 11월 28일부터 Heroku 무료 요금제는 더 이상 제공되지 않음) - 배포 방안 고민 중
+- 현재 Application Error 발생하여 접속 되지 않는 상태 (2022년 11월 28일부터 Heroku 무료 요금제는 더 이상 제공되지 않음)
+  - 다른 배포 방안을 고민 중임
 
 블로그 포스팅 바로가기
 - [[Project] Seoul FP-Weather - (1) Introduction & Database](https://velog.io/@dankj1991/Project-Seoul-FP-Weather-%EB%82%A0%EC%94%A8-%EA%B8%B0%EB%B0%98-%EC%84%9C%EC%9A%B8-%EC%8B%9D%EC%A4%91%EB%8F%85-%ED%99%98%EC%9E%90-%EC%88%98-%EC%98%88%EC%B8%A1-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-1-Introduction-Database)
