@@ -26,7 +26,9 @@
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white"></a>
 <img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white"></a>
 <img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=for-the-badge&logo=Amazon RDS&logoColor=white"></a>
+
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=Heroku&logoColor=white"></a>
+<img src="https://img.shields.io/badge/Koyeb-121212?style=for-the-badge&logo=Koyeb&logoColor=white"></a>
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=Flask&logoColor=white"></a>
 
 <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=NumPy&logoColor=white"/></a>
@@ -41,8 +43,10 @@
 # Seoul Food-Poisoning Prediction Program
 
 - 서울시 월간 기상정보를 기반으로 서울시 월간 식중독 발생 환자 수를 예측하는 AI 머신 러닝 프로그램
-
-App link = [Seoul-FP-Weather](https://fpweather.herokuapp.com/)
+  - App link = [~~Seoul-FP-Weather (Heroku 배포)~~](https://fpweather.herokuapp.com/)
+    - Heroku를 통해 배포하였으나 2022년 11월 28일부터 Heroku 무료 요금제는 더 이상 제공되지 않으므로 다른 서비스로 배포를 실시
+  - 대체 링크 [Seoul-FP-Weather (Koyeb 배포)](https://fpweather-kyungjaecheong.koyeb.app/)
+    - 예측 모델 정상 작동 확인 완료
 
 # Project ppt Outline 프로젝트 발표 개요
 
